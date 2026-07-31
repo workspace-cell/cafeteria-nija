@@ -134,11 +134,12 @@
     var nombre = tarjeta.getAttribute('data-nombre') || 'café NIJA';
     var activo = tarjeta.querySelector('.presentacion.esta-activo');
 
-    var mensaje = 'Hola NIJA ☕,\n\nEstoy interesado en adquirir su *' + nombre + '*.';
+    var mensaje = 'Hola NIJA, quiero pedir ' + nombre;
     if (activo) {
-      mensaje += '\n\nDeseo la presentación de *' + activo.getAttribute('data-medida') + '* (S/ ' + activo.getAttribute('data-precio') + ').\n\n¿Me podrían indicar los pasos para la compra y el envío, por favor?';
+      mensaje += ' en presentación de ' + activo.getAttribute('data-medida') +
+                 ' (S/ ' + activo.getAttribute('data-precio') + ').';
     } else {
-      mensaje += '\n\n¿Me podrían brindar más información y precios, por favor?';
+      mensaje += '. ¿Me pueden dar más información?';
     }
     return mensaje;
   }
@@ -243,12 +244,12 @@
 
       var d = new FormData(formPedido);
       var mensaje =
-        'Hola NIJA ☕, mi nombre es *' + d.get('nombre') + '*.\n\n' +
-        'Estoy interesado en el producto: *' + d.get('producto') + '*.\n' +
-        'Mi teléfono de contacto es: ' + d.get('telefono') + '.';
+        'Hola NIJA, soy ' + d.get('nombre') + '.\n' +
+        'Producto de interés: ' + d.get('producto') + '.\n' +
+        'Teléfono: ' + d.get('telefono') + '.';
 
       var extra = (d.get('mensaje') || '').trim();
-      if (extra) mensaje += '\n\nDetalle adicional: ' + extra;
+      if (extra) mensaje += '\nDetalle: ' + extra;
 
       abrirWhatsApp(mensaje);
       mostrarAviso('¡Listo! Abrimos WhatsApp con tu pedido redactado.');
@@ -266,12 +267,11 @@
 
       var d = new FormData(formPartner);
       var mensaje =
-        'Hola NIJA ☕, me gustaría solicitar la lista de precios mayorista.\n\n' +
-        '*Mis datos son:*\n' +
-        '- Nombre: ' + d.get('nombre') + '\n' +
-        '- Negocio: ' + (d.get('negocio') || 'No indicado') + '\n' +
-        '- Tipo de aliado: ' + d.get('tipo') + '\n' +
-        '- Teléfono: ' + d.get('telefono');
+        'Hola NIJA, quiero la lista de precios mayorista.\n' +
+        'Nombre: ' + d.get('nombre') + '\n' +
+        'Negocio: ' + (d.get('negocio') || 'No indicado') + '\n' +
+        'Tipo de aliado: ' + d.get('tipo') + '\n' +
+        'Teléfono: ' + d.get('telefono');
 
       abrirWhatsApp(mensaje);
       formPartner.reset();
