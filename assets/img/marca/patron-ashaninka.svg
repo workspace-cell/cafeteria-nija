@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="60" viewBox="0 0 120 60">
+  <!-- Motivo geométrico inspirado en la textilería Ashaninka: rombos anidados y grecas -->
+  <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter">
+    <path d="M0 30 L15 15 L30 30 L15 45 Z"/>
+    <path d="M6 30 L15 21 L24 30 L15 39 Z"/>
+    <path d="M30 30 L45 15 L60 30 L45 45 Z"/>
+    <path d="M36 30 L45 24 L54 30 L45 36 Z"/>
+    <path d="M60 30 L75 15 L90 30 L75 45 Z"/>
+    <path d="M66 30 L75 21 L84 30 L75 39 Z"/>
+    <path d="M90 30 L105 15 L120 30 L105 45 Z"/>
+    <path d="M96 30 L105 24 L114 30 L105 36 Z"/>
+    <path d="M0 2 L15 2 M30 2 L45 2 M60 2 L75 2 M90 2 L105 2"/>
+    <path d="M15 58 L30 58 M45 58 L60 58 M75 58 L90 58 M105 58 L120 58"/>
+  </g>
+</svg>
